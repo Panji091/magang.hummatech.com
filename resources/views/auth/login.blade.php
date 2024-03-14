@@ -49,37 +49,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="asset-login/assets/vendor/fonts/tabler-iconsea04.css?id=6ad8bc28559d005d792d577cf02a2116" />
-<link rel="stylesheet" href="asset-login/assets/vendor/fonts/fontawesome8a69.css?id=a2997cb6a1c98cc3c85f4c99cdea95b5" />
-<link rel="stylesheet" href="asset-login/assets/vendor/fonts/flag-icons80a8.css?id=121bcc3078c6c2f608037fb9ca8bce8d" />
+<link rel="stylesheet" href="{{ asset('asset-login/assets/vendor/fonts/tabler-iconsea04.css?id=6ad8bc28559d005d792d577cf02a2116') }}" />
+<link rel="stylesheet" href="{{ asset('asset-login/assets/vendor/fonts/fontawesome8a69.css?id=a2997cb6a1c98cc3c85f4c99cdea95b5') }}" />
+<link rel="stylesheet" href="{{ asset('asset-login/assets/vendor/fonts/flag-icons80a8.css?id=121bcc3078c6c2f608037fb9ca8bce8d') }}" />
 <!-- Core CSS -->
-<link rel="stylesheet" href="asset-login/assets/vendor/css/rtl/core6cc1.css?id=9dd8321ea008145745a7d78e072a6e36" class="template-customizer-core-css" />
-<link rel="stylesheet" href="asset-login/assets/vendor/css/rtl/theme-defaultfc79.css?id=a4539ede8fbe0ee4ea3a81f2c89f07d9" class="template-customizer-theme-css" />
-<link rel="stylesheet" href="asset-login/assets/css/demof1ed.css?id=ddd2feb83a604f9e432cdcb29815ed44" />
-<link rel="stylesheet" href="asset-login/assets/vendor/libs/node-waves/node-wavesd178.css?id=aa72fb97dfa8e932ba88c8a3c04641bc" />
-<link rel="stylesheet" href="asset-login/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar7358.css?id=280196ccb54c8ae7e29ea06932c9a4b6" />
-<link rel="stylesheet" href="asset-login/assets/vendor/libs/typeahead-js/typeaheadb5e1.css?id=2603197f6b29a6654cb700bd9367e2a3" />
+<link rel="stylesheet" href="{{ asset('asset-login/assets/vendor/css/rtl/core6cc1.css?id=9dd8321ea008145745a7d78e072a6e36') }}" class="template-customizer-core-css" />
+<link rel="stylesheet" href="{{ asset('asset-login/assets/vendor/css/rtl/theme-defaultfc79.css?id=a4539ede8fbe0ee4ea3a81f2c89f07d9') }}" class="template-customizer-theme-css" />
+<link rel="stylesheet" href="{{ asset('asset-login/assets/css/demof1ed.css?id=ddd2feb83a604f9e432cdcb29815ed44') }}" />
+<link rel="stylesheet" href="{{ asset('asset-login/assets/vendor/libs/node-waves/node-wavesd178.css?id=aa72fb97dfa8e932ba88c8a3c04641bc') }}" />
+<link rel="stylesheet" href="{{ asset('asset-login/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar7358.css?id=280196ccb54c8ae7e29ea06932c9a4b6') }}" />
+<link rel="stylesheet" href="{{ asset('asset-login/assets/vendor/libs/typeahead-js/typeaheadb5e1.css?id=2603197f6b29a6654cb700bd9367e2a3') }}" />
 
 <!-- Vendor Styles -->
 <!-- Vendor -->
-<link rel="stylesheet" href="asset-login/assets/vendor/libs/%40form-validation/umd/styles/index.min.css" />
+<link rel="stylesheet" href="{{ asset('asset-login/assets/vendor/libs/%40form-validation/umd/styles/index.min.css') }}" />
 
 
 <!-- Page Styles -->
 <!-- Page -->
-<link rel="stylesheet" href="asset-login/assets/vendor/css/pages/page-auth.css">
+<link rel="stylesheet" href="{{ asset('asset-login/assets/vendor/css/pages/page-auth.css') }}">
 
   <!-- Include Scripts for customizer, helper, analytics, config -->
   <!-- $isFront is used to append the front layout scriptsIncludes only on the front layout otherwise the variable will be blank -->
   <!-- laravel style -->
-<script src="asset-login/assets/vendor/js/helpers.js"></script>
+<script src="{{ asset('asset-login/assets/vendor/js/helpers.js') }}"></script>
 <!-- beautify ignore:start -->
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-  <script src="asset-login/assets/vendor/js/template-customizer.js"></script>
+  <script src="{{ asset('asset-login/assets/vendor/js/template-customizer.js') }}"></script>
 
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-  <script src="asset-login/assets/js/config.js"></script>
+  <script src="{{ asset('asset-login/assets/js/config.js') }}"></script>
 
   <script>
     window.templateCustomizer = new TemplateCustomizer({
@@ -226,26 +226,26 @@
   <!-- Include Scripts -->
   <!-- $isFront is used to append the front layout scripts only on the front layout otherwise the variable will be blank -->
   <!-- BEGIN: Vendor JS-->
-<script src="asset-login/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a"></script>
-<script src="asset-login/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c"></script>
-<script src="asset-login/assets/vendor/js/bootstraped84.js?id=9a6c701557297a042348b5aea69e9b76"></script>
-<script src="asset-login/assets/vendor/libs/node-waves/node-waves259f.js?id=4fae469a3ded69fb59fce3dcc14cd638"></script>
-<script src="asset-login/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a"></script>
-<script src="asset-login/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8"></script>
-<script src="asset-login/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6"></script>
-<script src="asset-login/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8"></script>
-<script src="asset-login/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js"></script>
-<script src="asset-login/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js"></script>
-<script src="asset-login/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js"></script>
+<script src="{{ asset('asset-login/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a') }}"></script>
+<script src="{{ asset('asset-login/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c') }}"></script>
+<script src="{{ asset('asset-login/assets/vendor/js/bootstraped84.js?id=9a6c701557297a042348b5aea69e9b76') }}"></script>
+<script src="{{ asset('asset-login/assets/vendor/libs/node-waves/node-waves259f.js?id=4fae469a3ded69fb59fce3dcc14cd638') }}"></script>
+<script src="{{ asset('asset-login/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a') }}"></script>
+<script src="{{ asset('asset-login/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8') }}"></script>
+<script src="{{ asset('asset-login/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6') }}"></script>
+<script src="{{ asset('asset-login/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8') }}"></script>
+<script src="{{ asset('asset-login/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js') }}"></script>
+<script src="{{ asset('asset-login/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js') }}"></script>
+<script src="{{ asset('asset-login/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js') }}"></script>
 <!-- END: Page Vendor JS-->
 <!-- BEGIN: Theme JS-->
-<script src="asset-login/assets/js/mainf696.js?id=8bd0165c1c4340f4d4a66add0761ae8a"></script>
+<script src="{{ asset('asset-login/assets/js/mainf696.js?id=8bd0165c1c4340f4d4a66add0761ae8a') }}"></script>
 
 <!-- END: Theme JS-->
 <!-- Pricing Modal JS-->
 <!-- END: Pricing Modal JS-->
 <!-- BEGIN: Page JS-->
-<script src="asset-login/assets/js/pages-auth.js"></script>
+<script src="{{ asset('asset-login/assets/js/pages-auth.js') }}"></script>
 <!-- END: Page JS-->
 
 </body>
