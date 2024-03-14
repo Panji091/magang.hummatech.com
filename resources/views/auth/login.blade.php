@@ -6,9 +6,9 @@
     <div class="authentication-wrapper authentication-cover authentication-bg">
         <div class="authentication-inner row">
             <div class="d-none d-lg-flex col-lg-7 p-0">
-                <div class="auth-cover-bg auth-cover-bg-color d-flex justify-content-center align-items-center">
-                    <img src="{{ asset('assets/img/illustrations/auth-login-illustration-light.png') }}"
-                        alt="auth-login-cover" class="img-fluid my-5 auth-illustration"
+                <div class="">
+                    <img src="{{ asset('assets/image.jpg') }}"
+                        alt="auth-login-cover" class="img-fluid my-5 auth-illustration auth-cover-bg auth-cover-bg-color d-flex justify-content-center align-items-center" style="object-fit: cover"
                         data-app-dark-img="illustrations/auth-login-illustration-dark.html">
                 </div>
             </div>
