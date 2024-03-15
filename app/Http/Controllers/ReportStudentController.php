@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Contracts\Interfaces\ReporStudenttInterface;
+use App\Contracts\Interfaces\ReportStudenttInterface;
 use App\Contracts\Interfaces\StudentInterface;
 use App\Models\ReportStudent;
 use App\Http\Requests\StoreReportStudentRequest;
@@ -12,10 +12,10 @@ use App\Services\StudentService;
 
 class ReportStudentController extends Controller
 {
-    private ReporStudenttInterface $reportStudent;
+    private ReportStudenttInterface $reportStudent;
     private ReportStudentService $service;
 
-    public function __construct(StudentInterface $reportStudent , StudentService $service)
+    public function __construct(ReportStudenttInterface $reportStudent , StudentService $service)
     {
         $this->reportStudent = $reportStudent;
         $this->service = $service;

@@ -3,9 +3,10 @@
 namespace App\Contracts\Repositories;
 
 use App\Contracts\Interfaces\PicketInterface;
+use App\Contracts\Interfaces\ReportStudenttInterface;
 use App\Models\ReportStudent;
 
-class ReportStudentRepository extends BaseRepository implements PicketInterface
+class ReportStudentRepository extends BaseRepository implements ReportStudenttInterface
 {
     public function __construct(ReportStudent $reportStudent)
     {

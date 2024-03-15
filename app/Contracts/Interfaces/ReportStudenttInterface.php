@@ -6,7 +6,7 @@ use App\Contracts\Interfaces\Eloquent\GetInterface;
 use App\Contracts\Interfaces\Eloquent\StoreInterface;
 use App\Contracts\Interfaces\Eloquent\UpdateInterface;
 
-interface ReporStudenttInterface extends GetInterface , StoreInterface , DeleteInterface , UpdateInterface
+interface ReportStudenttInterface extends GetInterface , StoreInterface , DeleteInterface , UpdateInterface
 {
 
 }
