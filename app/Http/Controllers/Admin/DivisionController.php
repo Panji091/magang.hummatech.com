@@ -21,7 +21,7 @@ class DivisionController extends Controller
     public function index()
     {
         $divisions = $this->division->get();
-        return view('' , compact('divisions'));
+        return view('admin.page.division.index' , compact('divisions'));
     }
 
     /**
