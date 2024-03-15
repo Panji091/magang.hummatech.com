@@ -6,14 +6,18 @@ use App\Contracts\Interfaces\LetterheadsInterface;
 use App\Models\Letterhead;
 use App\Http\Requests\StoreLetterheadRequest;
 use App\Http\Requests\UpdateLetterheadRequest;
+use App\Services\LetterheadService;
 
 class LetterheadController extends Controller
 {
     private LetterheadsInterface $letterhead;
+    private LetterheadService $service;
 
-    public function __construct(LetterheadsInterface $letterhead)
+
+    public function __construct(LetterheadsInterface $letterhead , LetterheadService $service)
     {
         $this->letterhead = $letterhead;
+        $this->service = $service;
     }
     /**
      * Display a listing of the resource.
@@ -37,8 +41,9 @@ class LetterheadController extends Controller
      */
     public function store(StoreLetterheadRequest $request)
     {
-        $this->letterhead->store($request->validated());
-        return back()->with('success' , 'Data Berhasil Ditambahkan');
+        $data = $this->service->store($request);
+        $this->letterhead->store($data);
+        return back()->with('success' , 'Berhasil Menambahkan data');
     }
 
     /**
@@ -62,8 +67,9 @@ class LetterheadController extends Controller
      */
     public function update(UpdateLetterheadRequest $request, Letterhead $letterhead)
     {
-        $this->letterhead->update($letterhead->id , $request->validated());
-        return back()->with('success' , 'Data Berhasil Perbarui');
+        $data = $this->service->update($letterhead, $request);
+        $this->letterhead->update($letterhead->id, $data);
+        return back()->with('success' , 'Berhasi Memperbarui Data');
     }
 
     /**
@@ -71,7 +77,7 @@ class LetterheadController extends Controller
      */
     public function destroy(Letterhead $letterhead)
     {
+        $this->service->delete($letterhead);
         $this->letterhead->delete($letterhead->id);
-        return back()->with('success' , 'Data Berhasil DiHapus');
-    }
+        return back()->with('success' , 'Berhasi Menghapus Data');    }
 }
