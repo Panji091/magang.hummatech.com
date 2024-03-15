@@ -25,7 +25,7 @@ class RoleUserMiddleware
                 return auth()->user()->hasRole($role);
             }, $roles))
         ) {
-            abort(403);
+            return back();
         }
 
         # Else, continue and next to another request
