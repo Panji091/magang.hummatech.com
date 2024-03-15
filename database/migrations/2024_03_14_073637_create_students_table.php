@@ -37,7 +37,7 @@ return new class extends Migration
             $table->enum('gender' , [GenderEnum::MALE->value , GenderEnum::FEMALE->value]);
             $table->string('start_date');
             $table->string('finish_date');
-            $table->enum('class', [StudentClassEnum::TEEN->value, StudentClassEnum::TWELVE->value, StudentClassEnum::ELEVEN->value, StudentClassEnum::SCHOLAR->value] );
+            $table->enum('class', [StudentClassEnum::TEN->value, StudentClassEnum::TWELVE->value, StudentClassEnum::ELEVEN->value, StudentClassEnum::SCHOLAR->value] );
             $table->string('cv');
             $table->enum('internship_type', [InternshipTypeEnum::ONLINE->value, InternshipTypeEnum::OFFLINE->value]);
             $table->timestamps();
