@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreJournalRequest extends FormRequest
+class UpdateReportStudentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -23,8 +23,8 @@ class StoreJournalRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'description' => 'required',
-            'image' => 'mimes:png,jpg|required'
+            'image' => 'required',
+            'description' => 'required'
         ];
     }
 }

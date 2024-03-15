@@ -2,9 +2,19 @@
 
 namespace App\Providers;
 
+use App\Contracts\Interfaces\CodeOfConductInterface;
 use App\Contracts\Interfaces\DivisionInterface;
+use App\Contracts\Interfaces\JournalInterface;
+use App\Contracts\Interfaces\LetterheadsInterface;
+use App\Contracts\Interfaces\PicketInterface;
+use App\Contracts\Interfaces\ReportStudenttInterface;
 use App\Contracts\Interfaces\StudentInterface;
+use App\Contracts\Repositories\CodeOfConductRepository;
 use App\Contracts\Repositories\DivisionRepository;
+use App\Contracts\Repositories\JournalRepository;
+use App\Contracts\Repositories\LetterheadsRepository;
+use App\Contracts\Repositories\PicketRepository;
+use App\Contracts\Repositories\ReportStudentRepository;
 use App\Contracts\Repositories\StudentRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -12,7 +22,12 @@ class AppServiceProvider extends ServiceProvider
 {
     private array $register = [
         StudentInterface::class => StudentRepository::class,
-        DivisionInterface::class => DivisionRepository::class
+        DivisionInterface::class => DivisionRepository::class,
+        JournalInterface::class => JournalRepository::class,
+        PicketInterface::class => PicketRepository::class,
+        CodeOfConductInterface::class => CodeOfConductRepository::class,
+        ReportStudenttInterface::class => ReportStudentRepository::class,
+        LetterheadsInterface::class => LetterheadsRepository::class,
     ];
     /**
      * Register any application services.
