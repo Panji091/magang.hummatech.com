@@ -8,7 +8,4 @@ use App\Contracts\Interfaces\Eloquent\StoreInterface;
 use App\Contracts\Interfaces\Eloquent\UpdateInterface;
 
 interface JournalInterface extends GetInterface , StoreInterface , UpdateInterface , DeleteInterface
-{
-    
-}
-
+{}

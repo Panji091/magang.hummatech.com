@@ -92,19 +92,4 @@ trait UploadTrait
         }
         return $destinationPath;
     }
-
-    /**
-     * Image uploader with resize image
-     *
-     * $imagePath The image path
-     * @param string $storePath the store path
-     * @param array{name:string, duplicate:bool, quality:int} $options The compress option
-     * @see https://image.intervention.io/v3/introduction/index
-     * @see https://image.intervention.io/v3/modifying/resizing
-     */
-    public function compressImage($imagePath, $storePath, array $options = []): mixed
-    {
-        $storedImage = ImageCompressing::process($imagePath, $storePath, $options)->toArray();
-        return $storedImage['files'];
-    }
 }
