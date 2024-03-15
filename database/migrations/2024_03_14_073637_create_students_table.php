@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('address');
-            $table->foreignId('warning__letters')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('warning_letters')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('avatar');
             $table->string('birth_date');
             $table->string('birth_place');
