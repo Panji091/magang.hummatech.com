@@ -79,5 +79,6 @@ class LetterheadController extends Controller
     {
         $this->service->delete($letterhead);
         $this->letterhead->delete($letterhead->id);
-        return back()->with('success' , 'Berhasi Menghapus Data');    }
+        return back()->with('success' , 'Berhasi Menghapus Data');
+   }
 }

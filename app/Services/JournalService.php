@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Enums\TypeEnum;
+use App\Enum\TypeEnum ;
 use App\Http\Requests\StoreJournalRequest;
 use App\Http\Requests\StoreLogoRequest;
 use App\Traits\UploadTrait;
@@ -60,7 +60,7 @@ class JournalService
         $data = $request->validated();
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $data['image'] = $request->file('image')->store($request->type, 'public');
+            $data['image'] = $request->file('image')->store(TypeEnum::JOURNAL->value, 'public');
             return $data;
         }
         return false;
@@ -80,7 +80,7 @@ class JournalService
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $this->remove($journal->image);
-            $data['image'] = $request->file('image')->store($request->type, 'public');
+            $data['image'] = $request->file('image')->store(TypeEnum::JOURNAL->value, 'public');
         } else {
             $data['image'] = $journal->image;
         }

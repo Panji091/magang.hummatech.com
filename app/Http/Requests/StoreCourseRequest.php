@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateWarning_LetterRequest extends FormRequest
+class StoreCourseRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,9 @@ class UpdateWarning_LetterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'status' => 'required',
-            'date' => 'required',
-            'reference_number' => 'required',
-            'file' => 'required'
+            'title' => 'required',
+            'file' => 'required',
+            'videos' => 'required'
         ];
     }
 }
