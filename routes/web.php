@@ -14,6 +14,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
 Route::get('division', function () {
     return view('admin.division');
 });
@@ -31,3 +32,8 @@ Route::middleware('auth')->get('/home', function () {
     $roles = Auth::user()->roles->pluck('name');
     return redirect($roles[0]);
 })->name('authenticated');
+
+Route::get('/division', function () {
+    return view('admin.divison');
+});
+
