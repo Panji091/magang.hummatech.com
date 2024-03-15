@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 # ================================================ Administrator Route Group ==================================================
-
+Route::get('administrator' , [AdminController::class , 'index']);
 # ================================================ Offline Student Route Group ================================================
 
 # ================================================ Online Student Route Group =================================================
