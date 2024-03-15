@@ -26,11 +26,11 @@
   <body>
     <!-- Preloader -->
     <div class="preloader">
-      <img src="{{asset('preloader.png')}}" style="" alt="loader" class="lds-ripple" />
+      <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/favicon.ico" alt="loader" class="lds-ripple img-fluid" />
     </div>
     <!-- Preloader -->
     <div class="preloader">
-      <img src="{{asset('preloader.png')}}" style="" alt="loader" class="lds-ripple" />
+      <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/favicon.ico" alt="loader" class="lds-ripple img-fluid" />
     </div>
     <!--  Body Wrapper -->
     <div class="page-wrapper" id="main-wrapper" data-theme="blue_theme"  data-layout="vertical" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
