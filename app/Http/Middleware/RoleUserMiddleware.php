@@ -11,9 +11,10 @@ class RoleUserMiddleware
     /**
      * Handle an incoming request.
      *
-     * @see https://spatie.be/docs/laravel-permission/v6/basic-usage/role-permissions#content-checking-roles
-     * @see https://php.net/manual/en/function.array-map.php
-     * @see https://laravel.com/docs/11.x/errors#http-exceptions
+     * @link https://spatie.be/docs/laravel-permission/v6/basic-usage/role-permissions#content-checking-roles Documentation for role and permission
+     * @link https://php.net/manual/en/function.array-map.php Documentation for array_map
+     * @link https://php.net/manual/en/function.in-array.php Documentation for in_array
+     * @link https://laravel.com/docs/11.x/errors#http-exceptions Documentation for 403 Forbidden HTTP Exception
      * @param  string[] $roles The roles array from middleware "roles:middleware1,middleware2,..."
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */

@@ -4,14 +4,11 @@ namespace App\Services;
 
 use App\Enum\TypeEnum;
 use App\Http\Requests\StoreCodeOfConductRequest;
-use App\Http\Requests\StoreJournalRequest;
 use App\Traits\UploadTrait;
 use App\Http\Requests\StoreSaleRequest;
 use App\Http\Requests\UpdateCodeOfConductRequest;
-use App\Http\Requests\UpdateJournalRequest;
 use App\Http\Requests\UpdateSaleRequest;
 use App\Models\CodeOfConduct;
-use App\Models\Journal;
 use App\Models\Sale;
 
 class CodeOfConductService
@@ -28,7 +25,9 @@ class CodeOfConductService
      */
     public function validateAndUpload(string $disk, object $file, string $old_file = null): string
     {
-        if ($old_file) $this->remove($old_file);
+        if ($old_file) {
+            $this->remove($old_file);
+        }
 
         return $this->upload($disk, $file);
     }
