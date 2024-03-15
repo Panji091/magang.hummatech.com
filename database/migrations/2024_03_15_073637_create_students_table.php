@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('school');
             $table->enum('major', [MajorStudentEnum::MULTIMEDIA->value, MajorStudentEnum::RPL->value, MajorStudentEnum::TI->value]);
             $table->string('identify_number');
+            $table->foreignId('division_id')->constrained()->restrictOnDelete()->cascadeOnUpdate();
             $table->string('phone');
             $table->boolean('acepted');
             $table->enum('status' ,[StudentStatusEnum::ACCEPTED->value, StudentStatusEnum::DECLINED->value,StudentStatusEnum::PENDING->value])->default(StudentStatusEnum::PENDING->value);

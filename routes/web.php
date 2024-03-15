@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentOfline\StudentOflineController;
 use App\Http\Controllers\StudentOnline\StudentOnlineController;
 use Illuminate\Support\Facades\Auth;
@@ -13,12 +15,14 @@ Route::get('/', function () {
 
 # ================================================ Authentication Routes Group ================================================
 Auth::routes();
+//register
+Route::post('register/store', [StudentController::class, 'store']);
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 # ================================================ Administrator Route Group ==================================================
-Route::get('administrator' , [AdminController::class , 'index']);
+Route::get('administrator', [AdminController::class, 'index']);
 # ================================================ Offline Student Route Group ================================================
 Route::get('siswa-offline', [StudentOflineController::class, 'index'])->name('siswa.offline');
 # ================================================ Online Student Route Group =================================================

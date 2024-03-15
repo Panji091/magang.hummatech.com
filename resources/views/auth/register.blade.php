@@ -60,7 +60,7 @@
                             </div>
                         </div>
                         <div class="bs-stepper-content">
-                            <form id="multiStepsForm" method="POST" action="/register">
+                            <form id="multiStepsForm" method="POST" action="register/store">
                                 @method('POST')
                                 @csrf
                                 <div id="accountDetailsValidation" class="content">
@@ -90,7 +90,7 @@
                                         <div class="col-sm-6 form-password-toggle">
                                             <label class="form-label" for="multiStepsConfirmPass">Tanggal Lahir</label>
                                             <div class="input-group input-group-merge">
-                                                <input type="date" id="multiStepsConfirmPass" name="birth_data"
+                                                <input type="date" id="multiStepsConfirmPass" name="birth_date"
                                                     class="form-control" placeholder=""
                                                     aria-describedby="multiStepsConfirmPass2" />
                                                 <span class="input-group-text cursor-pointer"
@@ -192,6 +192,15 @@
                                                 <option value="offline">offline</option>
                                             </select>
                                         </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label" for="multiStepsAddress">Divisi</label>
+                                            <select name="division_id" class="form-select" id="multiStepsAddress">
+                                                <option disabled selected>Pilih divisi</option>
+                                                @foreach ($divisions as $division)
+                                                <option value="{{ $division->id }}">{{ $division->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                         <div class="col-12 d-flex justify-content-between mt-4">
                                             <button class="btn btn-label-secondary btn-prev" type="button"> <i
                                                     class="ti ti-arrow-left ti-xs me-sm-1 me-0"></i>
@@ -216,12 +225,12 @@
 
                                         <div class="col-md-6">
                                             <label class="form-label" for="multiStepsAddress">Password</label>
-                                            <input type="password" id="multiStepsFirstName" name="email"
+                                            <input type="password" id="multiStepsFirstName" name="password"
                                                 class="form-control" placeholder="password" />
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label" for="multiStepsAddress">konfirmasi password</label>
-                                            <input type="password" id="multiStepsFirstName" name="password"
+                                            <input type="password" id="multiStepsFirstName" name="confirm_password"
                                                 class="form-control" placeholder="password" />
                                         </div>
                                         <div class="col-12 d-flex justify-content-between mt-4">
