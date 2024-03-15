@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Warning_Letter;
 use App\Http\Requests\StoreWarning_LetterRequest;
 use App\Http\Requests\UpdateWarning_LetterRequest;

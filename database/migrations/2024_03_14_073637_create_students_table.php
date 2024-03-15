@@ -1,6 +1,9 @@
 <?php
 
 use App\Enum\GenderEnum;
+use App\Enum\InternshipTypeEnum;
+use App\Enum\MajorStudentEnum;
+use App\Enum\StudentClassEnum;
 use App\Enum\StudentStatusEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -23,17 +26,20 @@ return new class extends Migration
             $table->string('birth_date');
             $table->string('birth_place');
             $table->string('school');
-            $table->string('major');
+            $table->enum('major', [MajorStudentEnum::MULTIMEDIA->value, MajorStudentEnum::RPL->value, MajorStudentEnum::TI->value]);
             $table->string('identify_number');
             $table->string('phone');
             $table->boolean('acepted');
-            $table->enum('status' ,[StudentStatusEnum::ACCEPTED->value, StudentStatusEnum::DECLINED->value,StudentStatusEnum::PENDING->value]);
+            $table->enum('status' ,[StudentStatusEnum::ACCEPTED->value, StudentStatusEnum::DECLINED->value,StudentStatusEnum::PENDING->value])->default(StudentStatusEnum::PENDING->value);
             $table->string('rfid');
             $table->string('parents_statement');
             $table->string('self_statement');
             $table->enum('gender' , [GenderEnum::MALE->value , GenderEnum::FEMALE->value]);
             $table->string('start_date');
             $table->string('finish_date');
+            $table->enum('class', [StudentClassEnum::TEEN->value, StudentClassEnum::TWELVE->value, StudentClassEnum::ELEVEN->value, StudentClassEnum::SCHOLAR->value] );
+            $table->string('cv');
+            $table->enum('internship_type', [InternshipTypeEnum::ONLINE->value, InternshipTypeEnum::OFFLINE->value]);
             $table->timestamps();
         });
     }
