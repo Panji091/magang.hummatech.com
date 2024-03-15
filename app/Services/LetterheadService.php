@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Enums\TypeEnum;
+use App\Enum\TypeEnum;
 use App\Http\Requests\StoreJournalRequest;
 use App\Http\Requests\StoreLetterheadRequest;
 use App\Http\Requests\StoreLogoRequest;
@@ -63,7 +63,7 @@ class LetterheadService
         $data = $request->validated();
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $data['image'] = $request->file('image')->store($request->type, 'public');
+            $data['image'] = $request->file('image')->store(TypeEnum::LETTERHEAD->value, 'public');
             return $data;
         }
         return false;
@@ -83,7 +83,7 @@ class LetterheadService
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $this->remove($letterhead->image);
-            $data['image'] = $request->file('image')->store($request->type, 'public');
+            $data['image'] = $request->file('image')->store(TypeEnum::LETTERHEAD->value, 'public');
         } else {
             $data['image'] = $letterhead->image;
         }

@@ -63,7 +63,7 @@ class ReportStudentService
         $data = $request->validated();
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $data['image'] = $request->file('image')->store($request->type, 'public');
+            $data['image'] = $request->file('image')->store($request->image, 'public');
             return $data;
         }
         return false;
@@ -83,7 +83,7 @@ class ReportStudentService
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $this->remove($reportStudent->image);
-            $data['image'] = $request->file('image')->store($request->type, 'public');
+            $data['image'] = $request->file('image')->store($request->image, 'public');
         } else {
             $data['image'] = $reportStudent->image;
         }
