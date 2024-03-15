@@ -2,14 +2,17 @@
 
 namespace App\Providers;
 
+use App\Contracts\Interfaces\DivisionInterface;
 use App\Contracts\Interfaces\StudentInterface;
+use App\Contracts\Repositories\DivisionRepository;
 use App\Contracts\Repositories\StudentRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
     private array $register = [
-        StudentInterface::class => StudentRepository::class
+        StudentInterface::class => StudentRepository::class,
+        DivisionInterface::class => DivisionRepository::class
     ];
     /**
      * Register any application services.
