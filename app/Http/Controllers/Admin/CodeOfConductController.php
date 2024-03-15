@@ -41,7 +41,8 @@ class CodeOfConductController extends Controller
      */
     public function store(StoreCodeOfConductRequest $request)
     {
-        $this->service->store($request->validated());
+        $data = $this->service->store($request);
+        $this->codeOfConduct->store($data);
         return back()->with('success' , 'Berhasil menambahkan data');
     }
 
@@ -53,7 +54,8 @@ class CodeOfConductController extends Controller
      */
     public function update(CodeOfConduct $codeOfConduct, UpdateCodeOfConductRequest $request)
     {
-        $this->service->update($codeOfConduct, $request);
-        return back()->with('success' , 'Berhasil memperbaharui data');
+        $data = $this->service->update($codeOfConduct, $request);
+        $this->codeOfConduct->update($codeOfConduct, $data);
+        return back()->with('success', 'Berhasil memperbaharui data');
     }
 }
