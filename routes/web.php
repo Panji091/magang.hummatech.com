@@ -14,11 +14,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-Route::get('division', function () {
-    return view('admin.division');
-});
-
 # ================================================ Administrator Route Group ==================================================
 
 # ================================================ Offline Student Route Group ================================================
