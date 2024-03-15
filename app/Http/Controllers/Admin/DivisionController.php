@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Contracts\Interfaces\DivisionInterface;
 use App\Http\Controllers\Controller;
 use App\Models\Division;
 use App\Http\Requests\StoreDivisionRequest;
@@ -9,12 +10,18 @@ use App\Http\Requests\UpdateDivisionRequest;
 
 class DivisionController extends Controller
 {
+    private DivisionInterface $division;
+    public function __construct(DivisionInterface $division)
+    {
+        $this->division = $division;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $divisions = $this->division->get();
+        return view('' , compact('divisions'));
     }
 
     /**
@@ -30,7 +37,8 @@ class DivisionController extends Controller
      */
     public function store(StoreDivisionRequest $request)
     {
-        //
+        $this->division->store($request->validated());
+        return back()->with('succcess' , 'Data berhasil ditambahkan');
     }
 
     /**
@@ -54,7 +62,8 @@ class DivisionController extends Controller
      */
     public function update(UpdateDivisionRequest $request, Division $division)
     {
-        //
+        $this->division->update($division->id , $request->validated());
+        return back()->with('success' , 'Data Berhasil Diperbarui');
     }
 
     /**
@@ -62,6 +71,7 @@ class DivisionController extends Controller
      */
     public function destroy(Division $division)
     {
-        //
+        $this->division->delete($division->id);
+        return back()->with('success' , 'Data Berhasil Dihapus');
     }
 }
