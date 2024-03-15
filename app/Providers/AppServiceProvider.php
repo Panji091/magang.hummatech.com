@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Contracts\Interfaces\AbsenteePermitInterface;
 use App\Contracts\Interfaces\CourseInterface;
 use App\Contracts\Interfaces\CodeOfConductInterface;
 use App\Contracts\Interfaces\DivisionInterface;
@@ -10,6 +11,7 @@ use App\Contracts\Interfaces\LetterheadsInterface;
 use App\Contracts\Interfaces\PicketInterface;
 use App\Contracts\Interfaces\ReportStudenttInterface;
 use App\Contracts\Interfaces\StudentInterface;
+use App\Contracts\Repositories\AbsenteePermitRepository;
 use App\Contracts\Repositories\CourseRepository;
 use App\Contracts\Repositories\CodeOfConductRepository;
 use App\Contracts\Repositories\DivisionRepository;
@@ -30,8 +32,10 @@ class AppServiceProvider extends ServiceProvider
         CodeOfConductInterface::class => CodeOfConductRepository::class,
         ReportStudenttInterface::class => ReportStudentRepository::class,
         LetterheadsInterface::class => LetterheadsRepository::class,
-        CourseInterface::class => CourseRepository::class
+        CourseInterface::class => CourseRepository::class,
+        AbsenteePermitInterface::class => AbsenteePermitRepository::class
     ];
+
     /**
      * Register any application services.
      */
