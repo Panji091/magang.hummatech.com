@@ -1,1 +1,1 @@
-@extends('student_offline.layouts.app')
+@extends('student_online.layouts.app')
