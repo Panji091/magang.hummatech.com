@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Contracts\Interfaces\CodeOfConductInterface;
 use App\Contracts\Interfaces\DivisionInterface;
 use App\Contracts\Interfaces\JournalInterface;
 use App\Contracts\Interfaces\PicketInterface;
 use App\Contracts\Interfaces\StudentInterface;
+use App\Contracts\Repositories\CodeOfConductRepository;
 use App\Contracts\Repositories\DivisionRepository;
 use App\Contracts\Repositories\JournalRepository;
 use App\Contracts\Repositories\PicketRepository;
@@ -18,7 +20,8 @@ class AppServiceProvider extends ServiceProvider
         StudentInterface::class => StudentRepository::class,
         DivisionInterface::class => DivisionRepository::class,
         JournalInterface::class => JournalRepository::class,
-        PicketInterface::class => PicketRepository::class
+        PicketInterface::class => PicketRepository::class,
+        CodeOfConductInterface::class => CodeOfConductRepository::class,
     ];
     /**
      * Register any application services.

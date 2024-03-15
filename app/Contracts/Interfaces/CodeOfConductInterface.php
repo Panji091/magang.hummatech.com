@@ -7,5 +7,5 @@ use App\Contracts\Interfaces\Eloquent\GetInterface;
 use App\Contracts\Interfaces\Eloquent\StoreInterface;
 use App\Contracts\Interfaces\Eloquent\UpdateInterface;
 
-interface JournalInterface extends GetInterface , StoreInterface , UpdateInterface , DeleteInterface
+interface CodeOfConductInterface extends GetInterface, StoreInterface, UpdateInterface, DeleteInterface
 {}

@@ -2,15 +2,19 @@
 
 namespace App\Services;
 
+use App\Enum\TypeEnum;
+use App\Http\Requests\StoreCodeOfConductRequest;
 use App\Http\Requests\StoreJournalRequest;
 use App\Traits\UploadTrait;
 use App\Http\Requests\StoreSaleRequest;
+use App\Http\Requests\UpdateCodeOfConductRequest;
 use App\Http\Requests\UpdateJournalRequest;
 use App\Http\Requests\UpdateSaleRequest;
+use App\Models\CodeOfConduct;
 use App\Models\Journal;
 use App\Models\Sale;
 
-class JournalService
+class CodeOfConductService
 {
     use UploadTrait;
 
@@ -36,15 +40,11 @@ class JournalService
      *
      * @return array|bool
      */
-    public function store(StoreJournalRequest $request): array|bool
+    public function store(StoreCodeOfConductRequest $request): array|bool
     {
         $data = $request->validated();
-
-        if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $data['image'] = $request->file('image')->store($request->type, 'public');
-            return $data;
-        }
-        return false;
+        $data['file'] = $request->file('file')->store(TypeEnum::CODEOFCONDUCT, 'public');
+        return $data;
     }
 
     /**
@@ -55,22 +55,22 @@ class JournalService
      *
      * @return array|bool
      */
-    public function update(Journal $journal, UpdateJournalRequest $request): array|bool
+    public function update(CodeOfConduct $codeOfConduct, UpdateCodeOfConductRequest $request): array|bool
     {
         $data = $request->validated();
 
-        if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $this->remove($journal->image);
-            $data['image'] = $request->file('image')->store($request->type, 'public');
+        if ($request->hasFile('file')) {
+            $this->remove($codeOfConduct->file);
+            $data['file'] = $request->file('file')->store(TypeEnum::CODEOFCONDUCT, 'public');
         } else {
-            $data['image'] = $journal->image;
+            $data['file'] = $codeOfConduct->file;
         }
 
         return $data;
     }
 
-    public function delete(Journal $journal)
+    public function delete(CodeOfConduct $codeOfConduct)
     {
-        $this->remove($journal->image);
+        $this->remove($codeOfConduct->file);
     }
 }
