@@ -2,7 +2,7 @@
 
 namespace App\Enum;
 
-enum TypeEnum
+enum TypeEnum : string
 {
-    //
+    case JOURNAL = 'journal';
 }

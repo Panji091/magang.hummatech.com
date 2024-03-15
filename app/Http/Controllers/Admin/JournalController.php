@@ -2,19 +2,29 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Contracts\Interfaces\JournalInterface;
 use App\Http\Controllers\Controller;
 use App\Models\Journal;
 use App\Http\Requests\StoreJournalRequest;
 use App\Http\Requests\UpdateJournalRequest;
+use App\Services\JournalService;
 
 class JournalController extends Controller
 {
+    private JournalInterface $journal;
+    private JournalService $service;
+    public function __construct(JournalInterface $journal , JournalService $service)
+    {
+        $this->journal = $journal;
+        $this->service = $service;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $journals = $this->journal->get();
+        return view('' , compact('journals'));
     }
 
     /**
@@ -30,7 +40,9 @@ class JournalController extends Controller
      */
     public function store(StoreJournalRequest $request)
     {
-        //
+        $data = $this->service->store($request);
+        $this->journal->store($data);
+        return back()->with('success' , 'Berhasil Menambahkan data');
     }
 
     /**
@@ -54,7 +66,9 @@ class JournalController extends Controller
      */
     public function update(UpdateJournalRequest $request, Journal $journal)
     {
-        //
+        $data = $this->service->update($journal, $request);
+        $this->journal->update($journal->id, $data);
+        return back()->with('success' , 'Berhasi Memperbarui Data');
     }
 
     /**
@@ -62,6 +76,8 @@ class JournalController extends Controller
      */
     public function destroy(Journal $journal)
     {
-        //
+        $this->service->delete($journal);
+        $this->journal->delete($journal->id);
+        return back()->with('success' , 'Berhasi Menghapus Data');
     }
 }
