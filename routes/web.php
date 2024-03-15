@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\StudentOfline\StudentOflineController;
+use App\Http\Controllers\StudentOnline\StudentOnlineController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,7 @@ Route::get('administrator' , [AdminController::class , 'index']);
 # ================================================ Offline Student Route Group ================================================
 Route::get('siswa-offline', [StudentOflineController::class, 'index'])->name('siswa.offline');
 # ================================================ Online Student Route Group =================================================
-
+Route::get('siswa-online', [StudentOnlineController::class, 'index'])->name('siswa.online');
 # ================================================ School/Instance Route Group ================================================
 
 # ==================================================== Another Route Group ====================================================
